@@ -56,3 +56,15 @@ sylius_invoicing_plugin_shop:
     prefix: /{_locale}
     requirements:
         _locale: ^[a-z]{2}(?:_[A-Z]{2})?$
+        
+sylius_return_plugin_shop:
+    resource: "@SyliusReturnPlugin/config/shop_routing.yaml"
+    prefix: /{_locale}
+    requirements:
+        _locale: ^[a-z]{2}(?:_[A-Z]{2})?$
+        
+sylius_loyalty_plugin_shop:
+    resource: "@SyliusLoyaltyPlugin/config/shop_routing.yaml"
+    prefix: /{_locale}
+    requirements:
+        _locale: ^[a-z]{2}(?:_[A-Z]{2})?$
