@@ -6,11 +6,15 @@ imports:
 
     - { resource: "@SyliusShopBundle/Resources/config/app/config.yml" }
     - { resource: "@SyliusPayPalPlugin/Resources/config/config.yaml" }
+    - { resource: '@SyliusInvoicingPlugin/Resources/config/config.yml' }
+    - { resource: '@SyliusCustomerServicePlugin/config/config.yaml' }
     - { resource: "@SyliusMultiSourceInventoryPlugin/config/config.yaml" }
-    - { resource: "@SyliusCustomerServicePlugin/config/config.yaml" }
-    - { resource: "@SyliusInvoicingPlugin/Resources/config/config.yml" }
-    - { resource: '@SyliusRefundPlugin/Resources/config/app/config.yml' }
-
+    - { resource: "@SyliusMultiSourceInventoryPlugin/src/Integration/CustomerService/Resources/config/parameters.yaml" }
+    - { resource: "@SyliusMultiStorePlugin/config/config.yaml" }
+    - { resource: '@SyliusReturnPlugin/config/config.yaml' }
+    - { resource: '@SyliusLoyaltyPlugin/config/config.yaml' }
+    - { resource: '@SyliusPlusRbacPlugin/config/config.yaml' }
+    - { resource: '@SyliusPlusRbacPlugin/config/permissions.yaml' }
 
 parameters:
     sylius_core.public_dir: '%kernel.project_dir%/public'
@@ -21,6 +25,16 @@ parameters:
         - '%kernel.project_dir%/vendor/sylius/plus-source/src/MultiSourceInventoryPlugin/src/Integration/CustomerService/Resources/config/serialization/'
     sylius_multi_source_inventory_validation_paths:
         - '%kernel.project_dir%/vendor/sylius/plus-source/src/MultiSourceInventoryPlugin/src/Integration/CustomerService/Resources/config/validation/'
+    sylius_multi_store.model.business_unit_address.class: Sylius\MultiStorePlugin\BusinessUnits\Domain\Model\BusinessUnitAddress
+    sylius_multi_store.form.type.business_unit.validation_groups: ['sylius']
+    sylius_multi_store.form.type.business_unit_address.validation_groups: ['sylius']
+    sylius_multi_store.form.type.customer_pool.validation_groups: ['sylius']
+    sylius_loyalty.dto.loyalty_rule_action.validation_groups: [ 'sylius' ]
+    sylius_loyalty.form.type.loyalty_purchase.validation_groups: [ 'sylius' ]
+    sylius_loyalty.form.type.loyalty_rule.validation_groups: [ 'sylius' ]
+    sylius_loyalty.form.type.loyalty_rule_action.validation_groups: [ 'sylius' ]
+    sylius_return_api_resources_path: '%kernel.project_dir%/vendor/sylius/plus-source/src/ReturnPlugin/config/api_resources/'
+    sylius_loyalty_api_resources_path: '%kernel.project_dir%/vendor/sylius/plus-source/src/LoyaltyPlugin/config/api_resources/'
 
 when@dev:
     sylius_api:
