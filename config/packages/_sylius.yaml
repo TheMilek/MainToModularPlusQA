@@ -13,8 +13,6 @@ imports:
     - { resource: "@SyliusMultiStorePlugin/config/config.yaml" }
     - { resource: '@SyliusReturnPlugin/config/config.yaml' }
     - { resource: '@SyliusLoyaltyPlugin/config/config.yaml' }
-    - { resource: '@SyliusPlusRbacPlugin/config/config.yaml' }
-    - { resource: '@SyliusPlusRbacPlugin/config/permissions.yaml' }
 
 parameters:
     sylius_core.public_dir: '%kernel.project_dir%/public'

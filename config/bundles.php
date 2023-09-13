@@ -68,5 +68,4 @@ return [
     Sylius\CustomerServicePlugin\SyliusCustomerServicePlugin::class => ['all' => true],
     Sylius\ReturnPlugin\SyliusReturnPlugin::class => ['all' => true],
     Sylius\LoyaltyPlugin\SyliusLoyaltyPlugin::class => ['all' => true],
-    Sylius\PlusRbacPlugin\SyliusPlusRbacPlugin::class => ['all' => true],
 ];
