@@ -28,7 +28,6 @@ use Sylius\Plus\CustomerPools\Infrastructure\Provider\UsernameAndCustomerPoolPro
 use Sylius\Plus\CustomerPools\Infrastructure\Resolver\CustomerByEmailAndCustomerPoolResolver;
 use Sylius\Plus\CustomerPools\Infrastructure\Validator\CustomerClassMetadataLoader;
 use Sylius\Plus\Doctrine\ORM\CountCustomersQueryInterface;
-use Sylius\Plus\Doctrine\ORM\ShipmentRepository;
 use Sylius\Plus\Factory\InvoiceShopBillingDataFactoryInterface;
 use Sylius\Plus\Factory\VariantsQuantityMapFactory;
 use Sylius\Plus\Factory\VariantsQuantityMapFactoryInterface;
@@ -131,7 +130,6 @@ class SomeRandomService
         private CustomerResolverInterface $customerByEmailAndCustomerPoolResolver,
         private CustomerClassMetadataLoader $customerClassMetadataLoader,
         private CountCustomersQueryInterface $countCustomersQuery,
-        private ShipmentRepository $shipmentRepository,
         private InvoiceShopBillingDataFactoryInterface $invoiceShopBillingDataFactory,
         private VariantsQuantityMapFactoryInterface $variantsQuantityMapFactory,
         private ChannelProviderInterface $channelProvider,
